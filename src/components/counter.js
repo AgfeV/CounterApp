@@ -11,10 +11,10 @@ class Counter extends Component {
       <React.Fragment>
         <h4>{this.props.id}</h4>
         <span className={this.getBadgeClasses()}> {this.formatCount()}</span>
-        <button onClick={() => this.props.onIncrement(this.props.counter) } className= "btn btn-secondary btn-sm">Increment</button>
-        <button onClick={()=>this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2">Delete</button>
-      </React.Fragment>
-
+        <button onClick={() => this.props.onIncrement(this.props.counter) } className= "btn btn-secondary btn-sm">+</button>
+        <button onClick={()=>this.props.onDecrement(this.props.counter)} className="btn btn-secondary btn-sm m-2">-</button>
+        <button onClick={()=>this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2">X</button>
+        </React.Fragment>
     );
   }
 
@@ -49,7 +49,7 @@ class Counter extends Component {
   formatCount() {
     const {value} = this.props.counter;
     //Can return a jsx expression instead of just a string value.
-    return value === 0 ? <h1>Zero</h1> : value;
+    return value === 0 ? <h1>Empty</h1> : value;
   }
 }
 

@@ -7,11 +7,11 @@ class Counters extends Component {
   render() {
     //Object destructuring. Grab only the elements we a intrested in from prop
     //shortcut for organizing the data we need for the react Fragment
-    const {onReset, counters, onDelete,onIncrement} = this.props;
+    const {onReset, counters, onDelete,onIncrement,onDecrement} = this.props;
 
     return (
       //Note we are inheriting the counters objects from the props passed
-      //down from app.js, swith all attrubutes for event handling 
+      //down from app.js, swith all attrubutes for event handling
       <React.Fragment>
         <button
           onClick={onReset} className="btn btn-primary btn-sm m-2">Reset</button>
@@ -20,6 +20,7 @@ class Counters extends Component {
             key = {counter.id}
             onDelete={onDelete}
             onIncrement={onIncrement}
+            onDecrement={onDecrement}
             counter={counter} >
 
           </Counter>)}

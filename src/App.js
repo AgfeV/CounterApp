@@ -26,6 +26,7 @@ class App extends Component {
             counters = {this.state.counters}
             onReset = {this.handleReset}
             onIncrement = {this.handleIncrement}
+            onDecrement = {this.handleDecrement}
             onDelete = {this.handleDelete}
 
             />
@@ -36,6 +37,18 @@ class App extends Component {
 // Moving all the event handlers to the app class so we have a single  source of truth
 //All counters will send up and event and the actual increment will be done here.
 //Event handlers.
+
+//Additon of handleDecrement
+handleDecrement = counter =>
+{
+  const counters = [...this.state.counters] //Create a copy of the counters object
+  const index = counters.indexOf(counter);  //Grab the index of the counter object passed up with event handler
+
+  counters[index] = {...counter};
+  counters[index].value--; //Decrent the clone index
+  this.setState({counters});
+}
+
 handleIncrement= counter =>
 {
   console.log("Handle Increment");
