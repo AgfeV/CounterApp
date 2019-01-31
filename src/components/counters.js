@@ -10,6 +10,8 @@ class Counters extends Component {
     const {onReset, counters, onDelete,onIncrement} = this.props;
 
     return (
+      //Note we are inheriting the counters objects from the props passed
+      //down from app.js, swith all attrubutes for event handling 
       <React.Fragment>
         <button
           onClick={onReset} className="btn btn-primary btn-sm m-2">Reset</button>
