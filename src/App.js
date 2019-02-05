@@ -4,7 +4,7 @@ import NavBar from './components/navbar'
 import './App.css';
 import Counters from './components/counters';
 
-
+//checking if the commits are workjng
 class App extends Component {
   state = {
     //Array of counter objects to be rendered.
@@ -13,6 +13,10 @@ class App extends Component {
       {id:2, value: 0},
       {id:3, value: 0},
       {id:4, value: 0}
+    ]
+    a :
+    [
+      {catL: 1}
     ]
   };
 
